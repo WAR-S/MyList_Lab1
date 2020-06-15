@@ -5,6 +5,7 @@ class MyList
 {
 public:
     MyList() {};
+
     void append(int value)
     {
         int* ar = new int [m_size+1];
@@ -13,9 +14,10 @@ public:
             ar[i]=array[i];
         }
         ar[m_size]=value;
-        delete array;
+        delete [] array;
         array = ar;
         m_size++;
+
     }
     void remove(int value)
     {
@@ -28,9 +30,10 @@ public:
                 ar[i]=array[i+1];
             }
         }
-        delete array;
+        delete [] array;
         array = ar;
         m_size--;
+
     }
     int at(int index)
     {
